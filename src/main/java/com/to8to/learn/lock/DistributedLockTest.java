@@ -1,6 +1,6 @@
 package com.to8to.learn.lock;
 
-import com.to8to.server.utils.JSONUtils;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class DistributedLockTest {
     @Test
     public void select() {
         Map<String, Object> map = jdbcTemplate.queryForMap("SELECT * FROM methodLock");
-        System.out.println(JSONUtils.toJSONString(map));
+        System.out.println(JSON.toJSONString(map));
     }
 
     @Test
